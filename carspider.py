@@ -28,10 +28,9 @@ HEADERS = {
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/603.1.30 "
         "(KHTML, like Gecko) Version/10.1 Safari/603.1.30"}
 
-BASEURL = "https://www.xin.com"
+BASEURL = "http://www.xin.com"
 URL = "/{city}/i{page}/"
 CITYS = {"beijing", "shanghai", "chengdu", "suzhou"}
-CITYS = {"beijing"}
 
 
 class CarSpi:
