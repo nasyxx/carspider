@@ -19,6 +19,7 @@ import multiprocessing.dummy as mpd
 import tarfile
 import time
 from typing import List
+import os
 
 import bs4
 import requests as req
@@ -30,7 +31,9 @@ HEADERS = {
 
 BASEURL = "http://www.xin.com"
 URL = "/{city}/i{page}/"
-CITYS = {"beijing", "shanghai", "chengdu", "suzhou"}
+CITYS = {
+    "beijing", "shanghai", "chengdu", "suzhou", "xiamen", "nanning", "daqing",
+    "guangzhou", "zhengzhou", "taiyuan", "baotou"}
 
 
 class CarSpi:
@@ -127,6 +130,7 @@ def w_data() -> int:
                     f.write("|><|".join(datas))
                 ft.add(t)
                 print("Finished at:\t", time.ctime())
+                os.remove(t)
         except KeyboardInterrupt:
             return 1
         except BaseException:
